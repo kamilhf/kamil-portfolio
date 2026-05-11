@@ -1,4 +1,7 @@
+"use client";
+
 import AnimateOnScroll from "./AnimateOnScroll";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const personalBio = `
@@ -42,6 +45,20 @@ const hobbies = [
 ];
 
 export default function PersonalLife() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  useEffect(() => {
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setSelectedImage(null);
+    }
+  };
+
+  window.addEventListener("keydown", handleKeyDown);
+
+  return () => {
+    window.removeEventListener("keydown", handleKeyDown);
+  };
+}, []);
   return (
     <section
       id="personal"
@@ -82,22 +99,28 @@ export default function PersonalLife() {
 
               {/* Two portrait photos */}
               <div className="grid grid-cols-2 gap-3">
-                <div className="relative aspect-[9/16] rounded-2xl overflow-hidden">
+                <div
+                  className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer"
+                  onClick={() => setSelectedImage("/images/hobbies/hobby7.jpg")}
+                >
                   <Image
-                    src="/images/hobbies/hobby7.jpg"
-                    alt="Personal Photo 1"
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                  />
+                  src="/images/hobbies/hobby7.jpg"
+                  alt="Personal Photo 1"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
                 </div>
 
-                <div className="relative aspect-[9/16] rounded-2xl overflow-hidden">
+                 <div
+                  className="relative aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer"
+                  onClick={() => setSelectedImage("/images/hobbies/hobby8.jpg")}
+                >
                   <Image
-                    src="/images/hobbies/hobby8.jpg"
-                    alt="Personal Photo 2"
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                  />
+                  src="/images/hobbies/hobby8.jpg"
+                  alt="Personal Photo 1"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
                 </div>
               </div>
             </div>
@@ -109,13 +132,14 @@ export default function PersonalLife() {
               {hobbies.map((hobby, i) => (
                 <div
                   key={i}
-                  className="group relative aspect-[3/4] rounded-2xl overflow-hidden"
+                  className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer"
+                  onClick={() => setSelectedImage(hobby.src)}
                 >
                   <Image
                     src={hobby.src}
                     alt={hobby.caption}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-contain group-hover:scale-110 transition-transform duration-500"
                   />
 
                   {/* Overlay */}
@@ -136,6 +160,35 @@ export default function PersonalLife() {
           </AnimateOnScroll>
         </div>
       </div>
+      {selectedImage && (
+  <div
+    className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm
+               flex items-center justify-center p-4"
+    onClick={() => setSelectedImage(null)}
+  >
+    <div
+      className="relative w-full h-[90vh] max-w-6xl
+                 rounded-2xl overflow-hidden"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <Image
+        src={selectedImage}
+        alt="Expanded image"
+        fill
+        className="object-contain"
+      />
+
+      {/* Close button */}
+      <button
+        className="absolute top-4 right-4 text-white text-4xl
+                   hover:text-sky-300 transition-colors"
+        onClick={() => setSelectedImage(null)}
+      >
+        ×
+      </button>
+    </div>
+  </div>
+)}
     </section>
   );
 }

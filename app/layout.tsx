@@ -15,9 +15,12 @@ const header = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Kamil Hayyunaji Fabriano — Geodesy & Geomatics Engineer",
+  title: "Kamil's Portfolio",
   description:
     "Portfolio of Kamil Hayyunaji Fabriano, Geodesy and Geomatics Engineering student at ITB with expertise in hydrography, GIS, and spatial data analysis.",
+    icons: {
+    icon: "/public  /favicon.png",
+  },
 };
 
 export default function RootLayout({

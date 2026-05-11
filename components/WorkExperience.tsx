@@ -3,6 +3,8 @@
 import AnimateOnScroll from "./AnimateOnScroll";
 import Image from "next/image";
 
+import { useState, useEffect } from "react";
+
 const experiences = [
   {
     id: "phr",
@@ -86,6 +88,7 @@ const experiences = [
         src: "/images/work/xcel1.jpg",
         label: "XCEL Documentation 1",
         aspect: "aspect-[3/4]",
+        rounded: "rounded-3xl",
       },
       {
         src: "/images/work/xcel2.jpg",
@@ -102,6 +105,20 @@ const experiences = [
 ];
 
 export default function WorkExperience() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  useEffect(() => {
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setSelectedImage(null);
+    }
+  };
+
+  window.addEventListener("keydown", handleKeyDown);
+
+  return () => {
+    window.removeEventListener("keydown", handleKeyDown);
+  };
+}, []);
   return (
     <section id="work" className="bg-white/50 py-20">
       <div className="max-w-5xl mx-auto px-6">
@@ -173,7 +190,8 @@ export default function WorkExperience() {
                         key={pi}
                         className={`relative ${
                           photo.aspect ?? "aspect-video"
-                        } rounded-xl overflow-hidden`}
+                        } ${photo.rounded ?? "rounded-xl"} overflow-hidden cursor-pointer`}
+                        onClick={() => setSelectedImage(photo.src)}
                       >
                         <Image
                           src={photo.src}
@@ -190,6 +208,33 @@ export default function WorkExperience() {
           ))}
         </div>
       </div>
+      {selectedImage && (
+  <div
+    className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm
+               flex items-center justify-center p-4"
+    onClick={() => setSelectedImage(null)}
+  >
+    <div
+      className="relative w-full max-w-5xl max-h-[90vh] aspect-video"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <Image
+        src={selectedImage}
+        alt="Expanded image"
+        fill
+        className="object-contain rounded-2xl"
+      />
+
+      {/* Close button */}
+      <button
+        className="absolute -top-12 right-0 text-white text-3xl"
+        onClick={() => setSelectedImage(null)}
+      >
+        ×
+      </button>
+    </div>
+  </div>
+)}
     </section>
   );
 }

@@ -2,6 +2,7 @@
 
 import AnimateOnScroll from "./AnimateOnScroll";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const orgs = [
   {
@@ -105,6 +106,21 @@ const orgs = [
 ];
 
 export default function OrganizationalExperience() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  useEffect(() => {
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setSelectedImage(null);
+    }
+  };
+
+  window.addEventListener("keydown", handleKeyDown);
+
+  return () => {
+    window.removeEventListener("keydown", handleKeyDown);
+  };
+}, []);
+
   return (
     <section
       id="organizations"
@@ -170,12 +186,13 @@ export default function OrganizationalExperience() {
                   }`}
                 >
                   {o.photos.map((photo, pi) => (
-                    <div
-                      key={pi}
-                      className={`relative ${
-                        photo.aspect ?? "aspect-video"
-                      } rounded-xl overflow-hidden`}
-                    >
+                  <div
+                    key={pi}
+                    className={`relative ${
+                      photo.aspect ?? "aspect-video"
+                    } rounded-xl overflow-hidden cursor-pointer`}
+                    onClick={() => setSelectedImage(photo.src)}
+                  >
                       <Image
                         src={photo.src}
                         alt={`${o.org} photo ${pi + 1}`}
@@ -205,6 +222,35 @@ export default function OrganizationalExperience() {
           ))}
         </div>
       </div>
+      {selectedImage && (
+  <div
+    className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm
+               flex items-center justify-center p-4"
+    onClick={() => setSelectedImage(null)}
+  >
+      <div
+        className="relative w-full h-[90vh] max-w-6xl
+                  rounded-2xl overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Image
+          src={selectedImage}
+          alt="Expanded image"
+          fill
+          className="object-contain"
+        />
+
+      {/* Close button */}
+      <button
+        className="absolute top-1 right-1 text-white text-4xl
+                   hover:text-sky-300 transition-colors"
+        onClick={() => setSelectedImage(null)}
+      >
+        ×
+      </button>
+    </div>
+  </div>
+)}
     </section>
   );
 }
