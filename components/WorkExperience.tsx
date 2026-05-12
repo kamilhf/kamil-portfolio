@@ -14,7 +14,7 @@ const experiences = [
     location: "Riau, Indonesia",
     tags: ["Geodesy", "Web Development", "Datum Transformation", "MATLAB"],
     description:
-      "Developed a web-based information system to automate datum transformation processes within Pertamina Hulu Rokan's operational area. The system integrates geodetic control network shift data and tectonic plate deformation models to enable accurate coordinate conversion between reference frames (DGN95 to SRGI2013), supporting reliable spatial data management for oil and gas exploration and production activities.",
+      "Developed a web-based information system to automate datum transformation processes within Pertamina Hulu Rokan's operational area. The system integrates geodetic control network shift data and tectonic plate deformation models to enable accurate coordinate conversion between reference frames (ID74 to SRGI2013), supporting reliable spatial data management for oil and gas exploration and production activities.",
     photos: [
       {
         src: "/images/work/phr1.jpg",
