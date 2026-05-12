@@ -166,7 +166,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="bg-gradient-to-b from-sky-50 to-white py-20"
+      className="bg-white/25 py-10"
     >
       <div className="max-w-5xl mx-auto px-6">
         <AnimateOnScroll>

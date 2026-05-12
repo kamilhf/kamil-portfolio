@@ -31,6 +31,26 @@ body {
   color: var(--navy);
   font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* ─── Full-page contour background (fixed, behind everything) ─── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900' preserveAspectRatio='xMidYMid slice'%3E%3Cdefs%3E%3ClinearGradient id='fade' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%230ea5e9' stop-opacity='0.2'/%3E%3Cstop offset='50%25' stop-color='%230ea5e9' stop-opacity='0.2'/%3E%3Cstop offset='100%25' stop-color='%230284c7' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='none' stroke='url(%23fade)'%3E%3C!-- Organic flowing lines --%3E%3Cpath stroke-width='1.2' d='M-100 700 C 100 600, 300 750, 500 620 S 800 480, 1000 560 S 1300 680, 1540 580'/%3E%3Cpath stroke-width='1' d='M-100 650 C 150 530, 320 700, 520 560 S 820 420, 1020 510 S 1310 640, 1540 520'/%3E%3Cpath stroke-width='0.9' d='M-100 600 C 200 460, 350 640, 550 500 S 840 360, 1040 460 S 1320 600, 1540 460'/%3E%3Cpath stroke-width='0.8' d='M-100 550 C 250 390, 380 580, 580 440 S 860 300, 1060 400 S 1330 555, 1540 400'/%3E%3Cpath stroke-width='0.7' d='M-100 500 C 300 320, 420 520, 620 380 S 900 240, 1100 340 S 1350 500, 1540 340'/%3E%3Cpath stroke-width='0.6' d='M-100 460 C 350 260, 460 460, 660 320 S 940 180, 1140 280 S 1370 445, 1540 280'/%3E%3Cpath stroke-width='0.5' d='M-100 420 C 400 200, 500 400, 700 260 S 980 120, 1180 220 S 1390 390, 1540 220'/%3E%3C!-- Upper sweeping arcs --%3E%3Cpath stroke-width='1' d='M-100 300 C 200 180, 500 320, 720 200 S 1050 80, 1300 160 S 1450 260, 1540 180'/%3E%3Cpath stroke-width='0.8' d='M-100 240 C 250 110, 560 260, 780 140 S 1080 20, 1320 100 S 1460 200, 1540 120'/%3E%3Cpath stroke-width='0.6' d='M-100 180 C 300 50, 620 200, 840 80 S 1110 -30, 1340 50 S 1470 150, 1540 70'/%3E%3C!-- Bottom sweeping curves --%3E%3Cpath stroke-width='1.1' d='M-100 780 C 120 700, 350 820, 580 740 S 880 660, 1060 720 S 1340 800, 1540 720'/%3E%3Cpath stroke-width='0.9' d='M-100 840 C 160 750, 400 870, 640 790 S 920 710, 1100 780 S 1360 860, 1540 780'/%3E%3Cpath stroke-width='0.7' d='M-100 900 C 200 820, 460 930, 700 850 S 960 770, 1140 840 S 1380 910, 1540 840'/%3E%3C!-- Diagonal crossing lines for depth --%3E%3Cpath stroke-width='0.5' stroke-opacity='0.5' d='M 200 0 C 180 200, 400 300, 350 500 S 200 700, 300 900'/%3E%3Cpath stroke-width='0.4' stroke-opacity='0.4' d='M 600 0 C 550 200, 750 350, 680 550 S 520 720, 640 900'/%3E%3Cpath stroke-width='0.4' stroke-opacity='0.4' d='M 1000 0 C 920 200, 1100 380, 1000 580 S 850 740, 980 900'/%3E%3Cpath stroke-width='0.3' stroke-opacity='0.3' d='M 1300 0 C 1200 200, 1380 400, 1260 600 S 1100 780, 1260 900'/%3E%3C!-- Closed abstract shapes --%3E%3Cellipse cx='200' cy='450' rx='180' ry='110' stroke-width='0.6' stroke-opacity='0.5' transform='rotate(-15 200 450)'/%3E%3Cellipse cx='900' cy='300' rx='220' ry='130' stroke-width='0.5' stroke-opacity='0.4' transform='rotate(10 900 300)'/%3E%3Cellipse cx='1300' cy='650' rx='160' ry='95' stroke-width='0.6' stroke-opacity='0.5' transform='rotate(-8 1300 650)'/%3E%3Cellipse cx='500' cy='800' rx='130' ry='75' stroke-width='0.5' stroke-opacity='0.4' transform='rotate(5 500 800)'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* Make sure all sections sit above the background */
+section, nav, footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* ─── Scrollbar ─── */
@@ -123,14 +143,9 @@ section {
 
 /* ─── Hero gradient background with contour lines ─── */
 .hero-bg {
-  background-color: var(--sky-50);
   background-image:
-    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(56, 189, 248, 0.22) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 90% 80%, rgba(14, 165, 233, 0.10) 0%, transparent 60%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900'%3E%3Cg fill='none' stroke='%230ea5e9' stroke-opacity='0.10'%3E%3Cellipse cx='450' cy='600' rx='80'  ry='50'  stroke-width='1.2'/%3E%3Cellipse cx='450' cy='600' rx='160' ry='100' stroke-width='1'/%3E%3Cellipse cx='450' cy='600' rx='240' ry='155' stroke-width='1'/%3E%3Cellipse cx='450' cy='600' rx='320' ry='210' stroke-width='0.9'/%3E%3Cellipse cx='450' cy='600' rx='400' ry='268' stroke-width='0.9'/%3E%3Cellipse cx='450' cy='600' rx='480' ry='328' stroke-width='0.8'/%3E%3Cellipse cx='450' cy='600' rx='560' ry='390' stroke-width='0.8'/%3E%3Cellipse cx='450' cy='600' rx='640' ry='454' stroke-width='0.7'/%3E%3Cellipse cx='450' cy='600' rx='720' ry='520' stroke-width='0.7'/%3E%3Cellipse cx='450' cy='600' rx='800' ry='588' stroke-width='0.6'/%3E%3Cellipse cx='150' cy='200' rx='60'  ry='40'  stroke-width='1'  stroke-opacity='0.07'/%3E%3Cellipse cx='150' cy='200' rx='120' ry='85'  stroke-width='0.9' stroke-opacity='0.07'/%3E%3Cellipse cx='150' cy='200' rx='190' ry='135' stroke-width='0.8' stroke-opacity='0.06'/%3E%3Cellipse cx='150' cy='200' rx='265' ry='190' stroke-width='0.7' stroke-opacity='0.05'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center, center, center bottom;
-  background-size: cover, cover, 100% auto;
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(56, 189, 248, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 90% 80%, rgba(14, 165, 233, 0.08) 0%, transparent 60%);
 }
 
 /* ─── Image placeholder ─── */

@@ -120,7 +120,7 @@ export default function WorkExperience() {
   };
 }, []);
   return (
-    <section id="work" className="bg-white/50 py-20">
+    <section id="work" className="bg-white/25 py-10">
       <div className="max-w-5xl mx-auto px-6">
         <AnimateOnScroll>
           <h2 className="section-title mb-12">
