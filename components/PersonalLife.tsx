@@ -20,27 +20,21 @@ their field, empathetic to the communities their work impacts, and always willin
 const hobbies = [
   {
     src: "/images/hobbies/hobby1.jpg",
-    caption: "Hiking Adventure",
   },
   {
     src: "/images/hobbies/hobby2.jpg",
-    caption: "Photography",
   },
   {
     src: "/images/hobbies/hobby3.jpg",
-    caption: "null",
   },
   {
     src: "/images/hobbies/hobby4.jpg",
-    caption: "Sports",
   },
   {
     src: "/images/hobbies/hobby5.jpg",
-    caption: "Reading",
   },
   {
     src: "/images/hobbies/hobby6.jpg",
-    caption: "Traveling",
   },
 ];
 
@@ -62,23 +56,8 @@ export default function PersonalLife() {
   return (
     <section
       id="personal"
-      className="bg-sky-900 text-white relative overflow-hidden py-20"
+      className="bg-gray-900 text-white relative overflow-hidden py-20"
     >
-      {/* Background decoration */}
-      <div
-        className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10"
-        style={{
-          background: "radial-gradient(circle, #38bdf8, transparent 70%)",
-        }}
-      />
-
-      <div
-        className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10"
-        style={{
-          background: "radial-gradient(circle, #0ea5e9, transparent 70%)",
-        }}
-      />
-
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <AnimateOnScroll>
           <h2 className="section-title mb-12 !text-white">
@@ -100,7 +79,7 @@ export default function PersonalLife() {
               {/* Two portrait photos */}
               <div className="grid grid-cols-2 gap-3">
                 <div
-                  className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer"
+                  className="relative w-full aspect-[9/16] 2xl overflow-hidden cursor-pointer"
                   onClick={() => setSelectedImage("/images/hobbies/hobby7.jpg")}
                 >
                   <Image
@@ -112,7 +91,7 @@ export default function PersonalLife() {
                 </div>
 
                  <div
-                  className="relative aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer"
+                  className="relative aspect-[9/16] 2xl overflow-hidden cursor-pointer"
                   onClick={() => setSelectedImage("/images/hobbies/hobby8.jpg")}
                 >
                   <Image
@@ -132,12 +111,12 @@ export default function PersonalLife() {
               {hobbies.map((hobby, i) => (
                 <div
                   key={i}
-                  className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer"
+                  className="group relative aspect-[3/4] -2xl overflow-hidden cursor-pointer"
                   onClick={() => setSelectedImage(hobby.src)}
                 >
                   <Image
                     src={hobby.src}
-                    alt={hobby.caption}
+                    alt=""
                     fill
                     className="object-contain group-hover:scale-110 transition-transform duration-500"
                   />
@@ -145,13 +124,8 @@ export default function PersonalLife() {
                   {/* Overlay */}
                   <div
                     className="absolute bottom-0 left-0 right-0 p-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      background:
-                        "linear-gradient(transparent, rgba(7, 89, 133, 0.9))",
-                    }}
-                  >
+>
                     <span className="text-sm text-white font-medium">
-                      {hobby.caption}
                     </span>
                   </div>
                 </div>

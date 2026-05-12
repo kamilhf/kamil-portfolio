@@ -6,8 +6,8 @@ import Image from "next/image";
 const skillGroups = [
   {
     category: "GIS & Mapping",
-    color: "bg-emerald-50 border-emerald-200",
-    accent: "text-emerald-600",
+    color: "bg-sky-50 border-sky-200",
+    accent: "text-sky-600",
     skills: [
       {
         name: "ArcGIS Pro",
@@ -28,8 +28,8 @@ const skillGroups = [
   },
   {
     category: "Remote Sensing & Photogrammetry",
-    color: "bg-violet-50 border-violet-200",
-    accent: "text-violet-600",
+    color: "bg-sky-50 border-sky-200",
+    accent: "text-sky-600",
     skills: [
       {
         name: "Agisoft Metashape",
@@ -50,8 +50,8 @@ const skillGroups = [
   },
   {
     category: "Programming & Data",
-    color: "bg-amber-50 border-amber-200",
-    accent: "text-amber-600",
+    color: "bg-sky-50 border-sky-200",
+    accent: "text-sky-600",
     skills: [
       {
         name: "Python",
@@ -89,8 +89,8 @@ const skillGroups = [
   },
   {
     category: "Hydrography & Oceanography",
-    color: "bg-cyan-50 border-cyan-200",
-    accent: "text-cyan-600",
+    color: "bg-sky-50 border-sky-200",
+    accent: "text-sky-600",
     skills: [
       {
         name: "Delft3D",
@@ -106,8 +106,8 @@ const skillGroups = [
   },
   {
     category: "Design & Productivity",
-    color: "bg-rose-50 border-rose-200",
-    accent: "text-rose-600",
+    color: "bg-sky-50 border-sky-200",
+    accent: "text-sky-600",
     skills: [
       {
         name: "AutoCAD",

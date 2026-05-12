@@ -39,7 +39,7 @@ const contacts = [
 
 export default function About() {
   return (
-    <section id="about" className="bg-white/50">
+    <section id="about" className="bg-blue/50">
       <div className="max-w-5xl mx-auto px-6">
         <AnimateOnScroll>
           <h2 className="section-title mb-12">About Me</h2>
