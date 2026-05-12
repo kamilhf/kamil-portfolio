@@ -155,6 +155,7 @@ function SkillIcon({
         src={skill.icon}
         alt={skill.name}
         fill
+        sizes="48px"
         className="object-contain"
         unoptimized
       />
