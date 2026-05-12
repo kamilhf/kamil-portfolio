@@ -7,7 +7,7 @@ const skillGroups = [
   {
     category: "GIS & Mapping",
     color: "bg-sky-50 border-sky-200",
-    accent: "text-sky-600",
+    accent: "text-sky-600", 
     skills: [
       {
         name: "ArcGIS Pro",
