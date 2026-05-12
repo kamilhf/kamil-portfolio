@@ -252,7 +252,7 @@ export default function OrganizationalExperience() {
 
       {/* Close button */}
       <button
-        className="absolute top-1 right-1 text-white text-4xl
+        className="absolute -top -right-20 text-white text-4xl
                    hover:text-sky-300 transition-colors"
         onClick={() => setSelectedImage(null)}
       >

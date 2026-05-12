@@ -238,7 +238,8 @@ export default function WorkExperience() {
 
       {/* Close button */}
       <button
-        className="absolute -top-12 right-0 text-white text-3xl"
+        className="absolute -top -right-20 text-white text-3xl
+                   hover:text-sky-300 transition-colors"
         onClick={() => setSelectedImage(null)}
       >
         ×

@@ -164,7 +164,7 @@ export default function PersonalLife() {
 
       {/* Close button */}
       <button
-        className="absolute top-4 right-4 text-white text-4xl
+        className="absolute -top -right-20 text-white text-4xl
                    hover:text-sky-300 transition-colors"
         onClick={() => setSelectedImage(null)}
       >
