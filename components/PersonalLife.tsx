@@ -41,6 +41,17 @@ const hobbies = [
 export default function PersonalLife() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   useEffect(() => {
+  if (selectedImage) {
+    document.body.classList.add("modal-open");
+  } else {
+    document.body.classList.remove("modal-open");
+  }
+
+  return () => {
+    document.body.classList.remove("modal-open");
+  };
+}, [selectedImage]);
+  useEffect(() => {
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
       setSelectedImage(null);
@@ -56,7 +67,7 @@ export default function PersonalLife() {
   return (
     <section
       id="personal"
-      className="bg-gray-900 text-white relative overflow-hidden py-10"
+      className="bg-gray-800 text-white relative overflow-hidden py-10"
     >
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <AnimateOnScroll>
@@ -136,13 +147,12 @@ export default function PersonalLife() {
       </div>
       {selectedImage && (
   <div
-    className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm
+    className="fixed inset-0 z-[9999] overflow-hidden bg-black/80 backdrop-blur-sm
                flex items-center justify-center p-4"
     onClick={() => setSelectedImage(null)}
   >
     <div
-      className="relative w-full h-[90vh] max-w-6xl
-                 rounded-2xl overflow-hidden"
+      className="relative w-full h-[90vh] max-w-5xl"
       onClick={(e) => e.stopPropagation()}
     >
       <Image

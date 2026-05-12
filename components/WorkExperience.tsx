@@ -107,6 +107,17 @@ const experiences = [
 export default function WorkExperience() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   useEffect(() => {
+  if (selectedImage) {
+    document.body.classList.add("modal-open");
+  } else {
+    document.body.classList.remove("modal-open");
+  }
+
+  return () => {
+    document.body.classList.remove("modal-open");
+  };
+}, [selectedImage]);
+  useEffect(() => {
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
       setSelectedImage(null);
@@ -210,12 +221,12 @@ export default function WorkExperience() {
       </div>
       {selectedImage && (
   <div
-    className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm
+    className="fixed inset-0 z-[9999] overflow-hidden bg-black/80 backdrop-blur-sm
                flex items-center justify-center p-4"
     onClick={() => setSelectedImage(null)}
   >
     <div
-      className="relative w-full max-w-5xl max-h-[90vh] aspect-video"
+      className="relative w-full h-[90vh] max-w-5xl"
       onClick={(e) => e.stopPropagation()}
     >
       <Image

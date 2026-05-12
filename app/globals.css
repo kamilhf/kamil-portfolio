@@ -50,7 +50,6 @@ body::before {
 /* Make sure all sections sit above the background */
 section, nav, footer {
   position: relative;
-  z-index: 1;
 }
 
 /* ─── Scrollbar ─── */
@@ -189,4 +188,8 @@ p {
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-10px); }
+}
+
+body.modal-open nav {
+  display: none;
 }
