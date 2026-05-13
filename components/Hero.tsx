@@ -46,7 +46,7 @@ export default function Hero() {
           style={{ fontSize: "clamp(3.5rem, 10vw, 8rem)", animation: "fadeUp 0.6s ease forwards", animationDelay: "0.1s", opacity: 0 }}
         >
           {"Hi, I'm "}
-          <span className="inline-block bg-gradient-to-r from-[#0284c7] to-[#7dd3fc] bg-clip-text text-transparent">
+          <span className="inline-block bg-gradient-to-r from-sky-600 to-sky-300 bg-clip-text text-transparent">
   Kamil
 </span>
         </h1>
@@ -79,7 +79,7 @@ export default function Hero() {
         >
           4th-year student at{" "}
           <span className="font-semibold text-sky-700">Institut Teknologi Bandung</span>{" "}
-          passionate about mapping the world through data — from ocean floors to the skies.
+          passionate about mapping the world through data — from ocean floors to the horizon.
         </p>
 
         {/* CTA buttons */}

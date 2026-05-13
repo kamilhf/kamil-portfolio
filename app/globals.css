@@ -54,8 +54,8 @@ section, nav, footer {
 
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--sky-100); }
-::-webkit-scrollbar-thumb { background: var(--sky-400); border-radius: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb, #38bdf8); border-radius: 3px; }
 
 /* ─── Section base ─── */
 section {
@@ -192,4 +192,9 @@ p {
 
 body.modal-open nav {
   display: none;
+}
+
+/* ─── No Gradient Line (for personal life part) ─── */
+.no-gradient-line::after {
+  display: none !important;
 }

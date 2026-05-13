@@ -67,12 +67,15 @@ export default function PersonalLife() {
   return (
     <section
       id="personal"
-      className="scroll-mt-10 bg-gray-800 text-white relative overflow-hidden py-10"
+      className="scroll-mt-20 bg-orange-100 text-white relative overflow-hidden py-10 border-t-4 border-orange-300
+      bg-[linear-gradient(to_right,#b4530940_1px,transparent_1px),linear-gradient(to_bottom,#b4530940_1px,transparent_1px)] bg-[size:150px_150px]"
     >
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <AnimateOnScroll>
-          <h2 className="section-title mb-12 !text-white">
-            Personal Life
+          <h2 className="section-title mb-4 no-gradient-line text-orange-700">
+            <span className="inline-block bg-gradient-to-r from-orange-700 to-orange-400 bg-clip-text text-transparent">
+              Personal Life
+            </span>
           </h2>
         </AnimateOnScroll>
 
@@ -82,7 +85,7 @@ export default function PersonalLife() {
             <div className="flex flex-col gap-6">
               {/* Bio */}
               <div>
-                <p className="text-white leading-relaxed text-base whitespace-pre-line">
+                <p className="text-black leading-relaxed text-base whitespace-pre-line">
                   {personalBio}
                 </p>
               </div>
@@ -136,7 +139,7 @@ export default function PersonalLife() {
                   <div
                     className="absolute bottom-0 left-0 right-0 p-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
 >
-                    <span className="text-sm text-white font-medium">
+                    <span className="text-sm text-black font-medium">
                     </span>
                   </div>
                 </div>

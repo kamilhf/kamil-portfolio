@@ -167,7 +167,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="scroll-mt-10 bg-white/25 py-10"
+      className="scroll-mt-16 bg-white/25 py-10"
     >
       <div className="max-w-5xl mx-auto px-6">
         <AnimateOnScroll>
