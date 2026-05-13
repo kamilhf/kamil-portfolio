@@ -67,7 +67,7 @@ export default function PersonalLife() {
   return (
     <section
       id="personal"
-      className="bg-gray-800 text-white relative overflow-hidden py-10"
+      className="scroll-mt-10 bg-gray-800 text-white relative overflow-hidden py-10"
     >
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <AnimateOnScroll>

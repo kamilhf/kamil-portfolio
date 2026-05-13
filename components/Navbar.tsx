@@ -35,7 +35,7 @@ export default function Navbar() {
         <a
           href="#hero"
           className="flex items-center justify-center w-11 h-11 rounded-full
-                     bg-sky-100/15 text-sky-600 hover:bg-sky-200
+                     bg-sky-100 text-sky-600 hover:bg-sky-200
                      transition-colors duration-200 shadow-sm"
           aria-label="Home"
         >
