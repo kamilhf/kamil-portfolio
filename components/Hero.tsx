@@ -42,11 +42,13 @@ export default function Hero() {
 
         {/* Big greeting */}
         <h1
-          className="font-display font-bold text-sky-900 leading-none mb-2"
+          className="font-display font-bold text-[#0c4a6e] leading-none mb-2"
           style={{ fontSize: "clamp(3.5rem, 10vw, 8rem)", animation: "fadeUp 0.6s ease forwards", animationDelay: "0.1s", opacity: 0 }}
         >
           {"Hi, I'm "}
-          <span className="text-gradient">Kamil</span>
+          <span className="inline-block bg-gradient-to-r from-[#0284c7] to-[#7dd3fc] bg-clip-text text-transparent">
+  Kamil
+</span>
         </h1>
 
         {/* Tagline */}
