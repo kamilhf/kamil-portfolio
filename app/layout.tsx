@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { DM_Sans, Fraunces, Inter, Playfair_Display, Work_Sans } from "next/font/google";
+import { DM_Sans, Fraunces, Inter, Noto_Sans, Open_Sans, Playfair_Display, Poppins, Roboto, Sora, Work_Sans } from "next/font/google";
 import "./globals.css";
 
-const isi = Inter({
+const isi = Poppins({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["300", "400", "500", "600"],
 });
 
-const header = Work_Sans({
+const header = Sora({
   subsets: ["latin"],
   variable: "--font-display",
   weight: ["400", "600", "700"],
