@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Kamil Hayyunaji Fabriano, Geodesy and Geomatics Engineering student at ITB with expertise in hydrography, GIS, and spatial data analysis.",
     icons: {
-    icon: "/public  /favicon.png",
+    icon: "/icon.ico",
   },
 };
 
