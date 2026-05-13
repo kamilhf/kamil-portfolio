@@ -78,7 +78,7 @@ export default function Hero() {
           style={{ animation: "fadeUp 0.6s ease forwards", animationDelay: "0.52s", opacity: 0 }}
         >
           4th-year student at{" "}
-          <span className="font-semibold text-sky-700">Institut Teknologi Bandung</span>{" "}
+          <span className="font-semibold text-sky-700">Institut Teknologi Bandung</span>{", "}
           passionate about mapping the world through data — from ocean floors to the horizon.
         </p>
 
