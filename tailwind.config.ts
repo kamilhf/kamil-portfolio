@@ -30,6 +30,7 @@ const config: Config = {
         "fade-up": "fadeUp 0.6s ease forwards",
         "fade-in": "fadeIn 0.5s ease forwards",
         float: "float 6s ease-in-out infinite",
+        progress: "progress linear forwards", // <-- ANIMASI PROGRESS
       },
       keyframes: {
         fadeUp: {
@@ -43,6 +44,10 @@ const config: Config = {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
+        },
+        progress: { // <-- KEYFRAMES PROGRESS
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
         },
       },
     },
