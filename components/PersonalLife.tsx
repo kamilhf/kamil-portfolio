@@ -67,7 +67,7 @@ export default function PersonalLife() {
   return (
     <section
       id="personal"
-      className="relative scroll-mt-20 overflow-hidden border-t-4 border-orange-300 bg-orange-100 bg-[linear-gradient(to_right,#b4530940_1px,transparent_1px),linear-gradient(to_bottom,#b4530940_1px,transparent_1px)] bg-[size:150px_150px] py-10 text-white"
+      className="relative scroll-mt-[70px] overflow-hidden border-t-4 border-orange-300 bg-orange-100 bg-[linear-gradient(to_right,#b4530940_1px,transparent_1px),linear-gradient(to_bottom,#b4530940_1px,transparent_1px)] bg-[size:150px_150px] py-10 text-white"
     >
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <AnimateOnScroll>

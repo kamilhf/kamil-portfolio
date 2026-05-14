@@ -136,7 +136,7 @@ export default function OrganizationalExperience() {
     <section id="organizations" className="scroll-mt-16 bg-white/25 py-10">
       <div className="mx-auto max-w-5xl px-6">
         <AnimateOnScroll>
-          <h2 className="section-title mb-12">Organizational Experience</h2>
+          <h2 className="section-title mb-8">Organizational Experience</h2>
         </AnimateOnScroll>
 
         <div className="flex flex-col gap-8">

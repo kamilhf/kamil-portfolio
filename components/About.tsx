@@ -42,7 +42,7 @@ export default function About() {
     <section id="about" className="scroll-mt-16 bg-white/25 py-10">
       <div className="mx-auto max-w-5xl px-6">
         <AnimateOnScroll>
-          <h2 className="section-title mb-12">About Me</h2>
+          <h2 className="section-title mb-8">About Me</h2>
         </AnimateOnScroll>
 
         <div className="grid items-start gap-12 md:grid-cols-2">
