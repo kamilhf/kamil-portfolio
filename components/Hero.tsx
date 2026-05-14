@@ -125,12 +125,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator - Fixed positioning */}
-      <div
-        className="pointer-events-none absolute bottom-8 left-0 right-0 flex items-center justify-center"
-        style={{ animation: "float 3s ease-in-out infinite" }}
-      >
-        <div className="flex flex-col items-center gap-1 opacity-50">
+      {/* Scroll Indicator - PERBAIKAN */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="flex flex-col items-center gap-1 opacity-50" style={{ animation: "float 3s ease-in-out infinite" }}>
           <span className="text-xs uppercase tracking-widest text-sky-500">Scroll</span>
           <svg
             className="h-4 w-4 text-sky-500"
