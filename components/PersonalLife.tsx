@@ -127,7 +127,7 @@ const handleTabClick = (i: number) => {
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <AnimateOnScroll>
             <div className="mb-5 flex justify-center">
-              <div className="rounded-2xl border border-orange-200/80 bg-white/30 px-6 py-3 shadow-lg backdrop-blur-sm">
+              <div className="rounded-2xl border border-orange-200/80 bg-white px-6 py-1 shadow-lg backdrop-blur-sm">
                 <h2 className="section-title no-gradient-line text-orange-700">
                   <span className="inline-block bg-gradient-to-r from-orange-700 to-orange-400 bg-clip-text text-transparent drop-shadow-md">
                     Personal Life
