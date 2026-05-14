@@ -22,7 +22,7 @@ export default function Home() {
         {/* Shared background wrapper */}
         <div
           id="personal"
-          className="relative overflow-hidden"
+          className="relative overflow-hidden border-t-4 border-orange-300 scroll-mt-[70px]"
         >
           {/* Background image */}
           <div
