@@ -7,18 +7,18 @@ export default function ScrollbarManager() {
 
   useEffect(() => {
     const personalSection = document.getElementById("personal");
-    
+
     if (!personalSection) return;
 
     const handleScroll = () => {
       const rect = personalSection.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-      
+
       // Calculate how much of the section is visible
       const visibleAmount = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
       const totalHeight = rect.height;
       const visiblePercentage = visibleAmount / totalHeight;
-      
+
       // Change color when at least 10% of the section is visible
       if (visiblePercentage > 0.1) {
         setIsPersonalSection(true);

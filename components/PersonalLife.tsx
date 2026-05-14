@@ -41,51 +41,50 @@ const hobbies = [
 export default function PersonalLife() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   useEffect(() => {
-  if (selectedImage) {
-    document.body.classList.add("modal-open");
-  } else {
-    document.body.classList.remove("modal-open");
-  }
-
-  return () => {
-    document.body.classList.remove("modal-open");
-  };
-}, [selectedImage]);
-  useEffect(() => {
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === "Escape") {
-      setSelectedImage(null);
+    if (selectedImage) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
     }
-  };
 
-  window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.classList.remove("modal-open");
+    };
+  }, [selectedImage]);
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
 
-  return () => {
-    window.removeEventListener("keydown", handleKeyDown);
-  };
-}, []);
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
   return (
     <section
       id="personal"
-      className="scroll-mt-20 bg-orange-100 text-white relative overflow-hidden py-10 border-t-4 border-orange-300
-      bg-[linear-gradient(to_right,#b4530940_1px,transparent_1px),linear-gradient(to_bottom,#b4530940_1px,transparent_1px)] bg-[size:150px_150px]"
+      className="relative scroll-mt-20 overflow-hidden border-t-4 border-orange-300 bg-orange-100 bg-[linear-gradient(to_right,#b4530940_1px,transparent_1px),linear-gradient(to_bottom,#b4530940_1px,transparent_1px)] bg-[size:150px_150px] py-10 text-white"
     >
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
         <AnimateOnScroll>
-          <h2 className="section-title mb-4 no-gradient-line text-orange-700">
+          <h2 className="section-title no-gradient-line mb-4 text-orange-700">
             <span className="inline-block bg-gradient-to-r from-orange-700 to-orange-400 bg-clip-text text-transparent">
               Personal Life
             </span>
           </h2>
         </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div className="grid items-start gap-10 md:grid-cols-2">
           {/* LEFT SIDE */}
           <AnimateOnScroll delay={100}>
             <div className="flex flex-col gap-6">
               {/* Bio */}
               <div>
-                <p className="text-black leading-relaxed text-base whitespace-pre-line">
+                <p className="whitespace-pre-line text-base leading-relaxed text-black">
                   {personalBio}
                 </p>
               </div>
@@ -93,27 +92,27 @@ export default function PersonalLife() {
               {/* Two portrait photos */}
               <div className="grid grid-cols-2 gap-3">
                 <div
-                  className="relative w-full aspect-[9/16] 2xl overflow-hidden cursor-pointer"
+                  className="2xl relative aspect-[9/16] w-full cursor-pointer overflow-hidden"
                   onClick={() => setSelectedImage("/images/hobbies/hobby7.jpg")}
                 >
                   <Image
-                  src="/images/hobbies/hobby7.jpg"
-                  alt="Personal Photo 1"
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                />
+                    src="/images/hobbies/hobby7.jpg"
+                    alt="Personal Photo 1"
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
                 </div>
 
-                 <div
-                  className="relative aspect-[9/16] 2xl overflow-hidden cursor-pointer"
+                <div
+                  className="2xl relative aspect-[9/16] cursor-pointer overflow-hidden"
                   onClick={() => setSelectedImage("/images/hobbies/hobby8.jpg")}
                 >
                   <Image
-                  src="/images/hobbies/hobby8.jpg"
-                  alt="Personal Photo 1"
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                />
+                    src="/images/hobbies/hobby8.jpg"
+                    alt="Personal Photo 1"
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
                 </div>
               </div>
             </div>
@@ -125,22 +124,19 @@ export default function PersonalLife() {
               {hobbies.map((hobby, i) => (
                 <div
                   key={i}
-                  className="group relative aspect-[3/4] -2xl overflow-hidden cursor-pointer"
+                  className="-2xl group relative aspect-[3/4] cursor-pointer overflow-hidden"
                   onClick={() => setSelectedImage(hobby.src)}
                 >
                   <Image
                     src={hobby.src}
                     alt=""
                     fill
-                    className="object-contain group-hover:scale-110 transition-transform duration-500"
+                    className="object-contain transition-transform duration-500 group-hover:scale-110"
                   />
 
                   {/* Overlay */}
-                  <div
-                    className="absolute bottom-0 left-0 right-0 p-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
->
-                    <span className="text-sm text-black font-medium">
-                    </span>
+                  <div className="absolute bottom-0 left-0 right-0 p-3 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span className="text-sm font-medium text-black"></span>
                   </div>
                 </div>
               ))}
@@ -149,33 +145,23 @@ export default function PersonalLife() {
         </div>
       </div>
       {selectedImage && (
-  <div
-    className="fixed inset-0 z-[9999] overflow-hidden bg-black/80 backdrop-blur-sm
-               flex items-center justify-center p-4"
-    onClick={() => setSelectedImage(null)}
-  >
-    <div
-      className="relative w-full h-[90vh] max-w-5xl"
-      onClick={(e) => e.stopPropagation()}
-    >
-      <Image
-        src={selectedImage}
-        alt="Expanded image"
-        fill
-        className="object-contain"
-      />
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-black/80 p-4 backdrop-blur-sm"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative h-[90vh] w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            <Image src={selectedImage} alt="Expanded image" fill className="object-contain" />
 
-      {/* Close button */}
-      <button
-        className="absolute -top -right-20 text-white text-4xl
-                   hover:text-sky-300 transition-colors"
-        onClick={() => setSelectedImage(null)}
-      >
-        ×
-      </button>
-    </div>
-  </div>
-)}
+            {/* Close button */}
+            <button
+              className="-top absolute -right-20 text-4xl text-white transition-colors hover:text-sky-300"
+              onClick={() => setSelectedImage(null)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

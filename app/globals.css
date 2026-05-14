@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --sky-50:  #f0f9ff;
+  --sky-50: #f0f9ff;
   --sky-100: #e0f2fe;
   --sky-200: #bae6fd;
   --sky-300: #7dd3fc;
@@ -13,7 +13,7 @@
   --sky-700: #0369a1;
   --sky-800: #075985;
   --sky-900: #0c4a6e;
-  --navy:    #0a2540;
+  --navy: #0a2540;
 }
 
 * {
@@ -48,14 +48,23 @@ body::before {
 }
 
 /* Make sure all sections sit above the background */
-section, nav, footer {
+section,
+nav,
+footer {
   position: relative;
 }
 
 /* ─── Scrollbar ─── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb, #38bdf8); border-radius: 3px; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, #38bdf8);
+  border-radius: 3px;
+}
 
 /* ─── Section base ─── */
 section {
@@ -110,7 +119,9 @@ section {
 .anim-hidden {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
 }
 .anim-visible {
   opacity: 1;
@@ -137,8 +148,12 @@ section {
   transition: width 0.25s ease;
   border-radius: 1px;
 }
-.nav-link:hover { color: var(--sky-500); }
-.nav-link:hover::after { width: 100%; }
+.nav-link:hover {
+  color: var(--sky-500);
+}
+.nav-link:hover::after {
+  width: 100%;
+}
 
 /* ─── Hero gradient background with contour lines ─── */
 .hero-bg {
@@ -181,13 +196,24 @@ p {
 
 /* ─── Keyframes for Hero animations ─── */
 @keyframes fadeUp {
-  0%   { opacity: 0; transform: translateY(24px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 body.modal-open nav {

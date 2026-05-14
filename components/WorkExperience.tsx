@@ -107,36 +107,34 @@ const experiences = [
 export default function WorkExperience() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   useEffect(() => {
-  if (selectedImage) {
-    document.body.classList.add("modal-open");
-  } else {
-    document.body.classList.remove("modal-open");
-  }
-
-  return () => {
-    document.body.classList.remove("modal-open");
-  };
-}, [selectedImage]);
-  useEffect(() => {
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === "Escape") {
-      setSelectedImage(null);
+    if (selectedImage) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
     }
-  };
 
-  window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.classList.remove("modal-open");
+    };
+  }, [selectedImage]);
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
 
-  return () => {
-    window.removeEventListener("keydown", handleKeyDown);
-  };
-}, []);
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
   return (
     <section id="work" className="scroll-mt-16 bg-white/25 py-10">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="mx-auto max-w-5xl px-6">
         <AnimateOnScroll>
-          <h2 className="section-title mb-12">
-            Work Experience
-          </h2>
+          <h2 className="section-title mb-12">Work Experience</h2>
         </AnimateOnScroll>
 
         <div className="flex flex-col gap-10">
@@ -144,38 +142,30 @@ export default function WorkExperience() {
             <AnimateOnScroll key={exp.id} delay={i * 100}>
               <div className="glass-card p-6 md:p-8">
                 {/* Header */}
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                   <div>
                     <h3 className="font-display text-lg font-semibold text-sky-800">
                       {exp.company}
                     </h3>
 
-                    <p className="text-sky-600 font-medium text-sm mt-0.5">
-                      {exp.role}
-                    </p>
+                    <p className="mt-0.5 text-sm font-medium text-sky-600">{exp.role}</p>
                   </div>
 
-                  <div className="flex flex-col sm:items-end gap-1 flex-shrink-0">
-                    <span
-                      className="px-3 py-1 rounded-full text-xs
-                                 bg-sky-100 text-sky-600 font-medium whitespace-nowrap"
-                    >
+                  <div className="flex flex-shrink-0 flex-col gap-1 sm:items-end">
+                    <span className="whitespace-nowrap rounded-full bg-sky-100 px-3 py-1 text-xs font-medium text-sky-600">
                       {exp.period}
                     </span>
 
-                    <span className="text-xs text-sky-400">
-                      {exp.location}
-                    </span>
+                    <span className="text-xs text-sky-400">{exp.location}</span>
                   </div>
                 </div>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
+                <div className="mb-4 flex flex-wrap gap-1.5">
                   {exp.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-0.5 text-xs rounded-full
-                                 bg-sky-50 text-sky-600 border border-sky-200 font-medium"
+                      className="rounded-full border border-sky-200 bg-sky-50 px-2.5 py-0.5 text-xs font-medium text-sky-600"
                     >
                       {tag}
                     </span>
@@ -183,17 +173,13 @@ export default function WorkExperience() {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-sky-800/75 leading-relaxed mb-6">
-                  {exp.description}
-                </p>
+                <p className="mb-6 text-sm leading-relaxed text-sky-800/75">{exp.description}</p>
 
                 {/* Photo Grid */}
                 {exp.photos.length > 0 && (
                   <div
                     className={`grid gap-3 ${
-                      exp.photos.length === 2
-                        ? "grid-cols-2"
-                        : "grid-cols-2 sm:grid-cols-3"
+                      exp.photos.length === 2 ? "grid-cols-2" : "grid-cols-2 sm:grid-cols-3"
                     }`}
                   >
                     {exp.photos.map((photo, pi) => (
@@ -201,14 +187,14 @@ export default function WorkExperience() {
                         key={pi}
                         className={`relative ${
                           photo.aspect ?? "aspect-video"
-                        } ${photo.rounded ?? "rounded-xl"} overflow-hidden cursor-pointer`}
+                        } ${photo.rounded ?? "rounded-xl"} cursor-pointer overflow-hidden`}
                         onClick={() => setSelectedImage(photo.src)}
                       >
                         <Image
                           src={photo.src}
                           alt={`${exp.company} documentation ${pi + 1}`}
                           fill
-                          className="object-cover hover:scale-105 transition-transform duration-500"
+                          className="object-cover transition-transform duration-500 hover:scale-105"
                         />
                       </div>
                     ))}
@@ -220,33 +206,28 @@ export default function WorkExperience() {
         </div>
       </div>
       {selectedImage && (
-  <div
-    className="fixed inset-0 z-[9999] overflow-hidden bg-black/80 backdrop-blur-sm
-               flex items-center justify-center p-4"
-    onClick={() => setSelectedImage(null)}
-  >
-    <div
-      className="relative w-full h-[90vh] max-w-5xl"
-      onClick={(e) => e.stopPropagation()}
-    >
-      <Image
-        src={selectedImage}
-        alt="Expanded image"
-        fill
-        className="object-contain rounded-2xl"
-      />
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-black/80 p-4 backdrop-blur-sm"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative h-[90vh] w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={selectedImage}
+              alt="Expanded image"
+              fill
+              className="rounded-2xl object-contain"
+            />
 
-      {/* Close button */}
-      <button
-        className="absolute -top -right-20 text-white text-3xl
-                   hover:text-sky-300 transition-colors"
-        onClick={() => setSelectedImage(null)}
-      >
-        ×
-      </button>
-    </div>
-  </div>
-)}
+            {/* Close button */}
+            <button
+              className="-top absolute -right-20 text-3xl text-white transition-colors hover:text-sky-300"
+              onClick={() => setSelectedImage(null)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

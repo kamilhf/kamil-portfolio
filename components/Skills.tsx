@@ -7,7 +7,7 @@ const skillGroups = [
   {
     category: "GIS & Mapping",
     color: "bg-sky-50 border-sky-200",
-    accent: "text-sky-600", 
+    accent: "text-sky-600",
     skills: [
       {
         name: "ArcGIS Pro",
@@ -144,13 +144,9 @@ const certifications = [
   },
 ];
 
-function SkillIcon({
-  skill,
-}: {
-  skill: (typeof skillGroups)[0]["skills"][0];
-}) {
+function SkillIcon({ skill }: { skill: (typeof skillGroups)[0]["skills"][0] }) {
   return (
-    <div className="relative w-8 h-8 flex-shrink-0">
+    <div className="relative h-8 w-8 flex-shrink-0">
       <Image
         src={skill.icon}
         alt={skill.name}
@@ -165,26 +161,19 @@ function SkillIcon({
 
 export default function Skills() {
   return (
-    <section
-      id="skills"
-      className="scroll-mt-16 bg-white/25 py-10"
-    >
-      <div className="max-w-5xl mx-auto px-6">
+    <section id="skills" className="scroll-mt-16 bg-white/25 py-10">
+      <div className="mx-auto max-w-5xl px-6">
         <AnimateOnScroll>
-          <h2 className="section-title mb-12">
-            Skills & Tools
-          </h2>
+          <h2 className="section-title mb-12">Skills & Tools</h2>
         </AnimateOnScroll>
 
         {/* Skill groups */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((group, gi) => (
             <AnimateOnScroll key={group.category} delay={gi * 80}>
-              <div
-                className={`rounded-2xl border p-5 ${group.color} h-full`}
-              >
+              <div className={`rounded-2xl border p-5 ${group.color} h-full`}>
                 <p
-                  className={`text-xs font-semibold uppercase tracking-wider mb-4 ${group.accent}`}
+                  className={`mb-4 text-xs font-semibold uppercase tracking-wider ${group.accent}`}
                 >
                   {group.category}
                 </p>
@@ -193,14 +182,11 @@ export default function Skills() {
                   {group.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="flex items-center gap-3 bg-white/70 rounded-xl px-3 py-2.5
-                                 hover:bg-white transition-colors duration-150 shadow-sm"
+                      className="flex items-center gap-3 rounded-xl bg-white/70 px-3 py-2.5 shadow-sm transition-colors duration-150 hover:bg-white"
                     >
                       <SkillIcon skill={skill} />
 
-                      <span className="text-sm font-medium text-sky-900">
-                        {skill.name}
-                      </span>
+                      <span className="text-sm font-medium text-sky-900">{skill.name}</span>
                     </div>
                   ))}
                 </div>
@@ -211,8 +197,8 @@ export default function Skills() {
 
         {/* Certifications */}
         <AnimateOnScroll delay={200}>
-          <div className="mt-10 glass-card p-6">
-            <p className="text-xs font-semibold uppercase tracking-wider text-sky-500 mb-4">
+          <div className="glass-card mt-10 p-6">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-sky-500">
               Licences & Certifications
             </p>
 
@@ -220,25 +206,21 @@ export default function Skills() {
               {certifications.map((cert) => (
                 <div
                   key={cert.title}
-                  className="flex items-start gap-4 p-3 rounded-xl
-                             bg-sky-50/80 hover:bg-sky-100/80
-                             transition-colors"
+                  className="flex items-start gap-4 rounded-xl bg-sky-50/80 p-3 transition-colors hover:bg-sky-100/80"
                 >
                   {/* Certification icon */}
-                  <div className="relative w-12 h-12 flex-shrink-0">
+                  <div className="relative h-12 w-12 flex-shrink-0">
                     <Image
                       src={cert.icon}
                       alt={cert.title}
                       fill
-                      className="object-contain rounded-lg"
+                      className="rounded-lg object-contain"
                     />
                   </div>
 
                   {/* Text */}
                   <div>
-                    <p className="text-sm font-semibold text-sky-800">
-                      {cert.title}
-                    </p>
+                    <p className="text-sm font-semibold text-sky-800">{cert.title}</p>
 
                     <p className="text-xs text-sky-500">
                       {cert.org} &nbsp;·&nbsp; {cert.date}

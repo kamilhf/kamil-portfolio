@@ -24,44 +24,34 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-30 transition-all duration-300 ${
         scrolled
-          ? "py-3 bg-white/80 backdrop-blur-md shadow-sm shadow-sky-100"
-          : "py-5 bg-transparent"
+          ? "bg-white/80 py-3 shadow-sm shadow-sky-100 backdrop-blur-md"
+          : "bg-transparent py-5"
       }`}
     >
-      <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-6">
         {/* Logo / Home */}
         <a
           href="#hero"
-          className="flex items-center justify-center w-11 h-11 rounded-full
-                     bg-sky-100 text-sky-600 hover:bg-sky-200
-                     transition-colors duration-200 shadow-sm"
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-100 text-sky-600 shadow-sm transition-colors duration-200 hover:bg-sky-200"
           aria-label="Home"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5"
+            className="h-5 w-5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth={2}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3 10.25L12 3l9 7.25"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 9.75V20h14V9.75"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 10.25L12 3l9 7.25" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 9.75V20h14V9.75" />
           </svg>
         </a>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <li key={item.href}>
               <a href={item.href} className="nav-link">
@@ -74,24 +64,24 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-1"
+          className="flex flex-col gap-1.5 p-1 md:hidden"
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-6 h-0.5 bg-sky-600 transition-all duration-300 ${
-              menuOpen ? "rotate-45 translate-y-2" : ""
+            className={`block h-0.5 w-6 bg-sky-600 transition-all duration-300 ${
+              menuOpen ? "translate-y-2 rotate-45" : ""
             }`}
           />
 
           <span
-            className={`block w-6 h-0.5 bg-sky-600 transition-all duration-300 ${
+            className={`block h-0.5 w-6 bg-sky-600 transition-all duration-300 ${
               menuOpen ? "opacity-0" : ""
             }`}
           />
 
           <span
-            className={`block w-6 h-0.5 bg-sky-600 transition-all duration-300 ${
-              menuOpen ? "-rotate-45 -translate-y-2" : ""
+            className={`block h-0.5 w-6 bg-sky-600 transition-all duration-300 ${
+              menuOpen ? "-translate-y-2 -rotate-45" : ""
             }`}
           />
         </button>
@@ -99,20 +89,16 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
+        className={`overflow-hidden transition-all duration-300 md:hidden ${
           menuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <ul
-          className="flex flex-col px-6 pt-2 pb-4 gap-3
-                     bg-white/90 backdrop-blur-md
-                     border-t border-sky-100"
-        >
+        <ul className="flex flex-col gap-3 border-t border-sky-100 bg-white/90 px-6 pb-4 pt-2 backdrop-blur-md">
           {navItems.map((item) => (
             <li key={item.href}>
               <a
                 href={item.href}
-                className="block py-1.5 text-sky-700 font-medium text-sm"
+                className="block py-1.5 text-sm font-medium text-sky-700"
                 onClick={() => setMenuOpen(false)}
               >
                 {item.label}
