@@ -7,7 +7,7 @@ import Image from "next/image";
 const personalBio = `Outside of geodesy and geomatics, I am someone who finds joy in staying curious and present. Growing up in Indonesia, I have always been drawn to the outdoors, whether it is hiking across Java’s volcanic landscapes, exploring coastlines, or simply taking long walks around Bandung’s hillside neighborhoods.
 
                     Beyond nature and travel, music has also become an important part of my daily life, offering both creativity and balance outside of work. I enjoy discovering different genres, attending live performances, performing in live stages, and experiencing how music connects people across cultures and experiences.
-                    
+
                     I believe that the best engineers are also well-rounded people who are curious about the world beyond their field, empathetic to the communities their work impacts, and always willing to learn something new.`;
 
 const hobbyCategories = [
@@ -100,30 +100,28 @@ export default function PersonalLife() {
 
   return (
     <section
-      id="personal"
-      className="relative scroll-mt-[70px] overflow-hidden border-t-4 border-orange-300 bg-orange-100 bg-[linear-gradient(to_right,#b4530940_1px,transparent_1px),linear-gradient(to_bottom,#b4530940_1px,transparent_1px)] bg-[size:150px_150px] py-10 text-white"
+      className="relative scroll-mt-[70px] py-10 text-white"
     >
-
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <AnimateOnScroll>
-            <div className="mb-4 flex justify-center">
+      
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
+        <AnimateOnScroll>
+          <div className="mb-5 flex justify-center">
+            <div className="rounded-2xl border border-orange-200/80 bg-white/30 px-6 py-3 shadow-lg backdrop-blur-sm">
               <h2 className="section-title no-gradient-line text-orange-700">
-                <span className="inline-block bg-gradient-to-r from-orange-700 to-orange-400 bg-clip-text text-transparent">
+                <span className="inline-block bg-gradient-to-r from-orange-700 to-orange-400 bg-clip-text text-transparent drop-shadow-md">
                   Personal Life
                 </span>
               </h2>
             </div>
-          </AnimateOnScroll>
+          </div>
+        </AnimateOnScroll>
 
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-5">
-
           {/* TOP — Hobby Slider */}
           <AnimateOnScroll delay={100}>
             <div className="flex flex-col gap-3">
-
               {/* Slider */}
               <div className="relative overflow-hidden rounded-3xl border border-orange-200/80 bg-white/30 p-3 shadow-sm backdrop-blur-sm">
-
                 {/* INNER MASK */}
                 <div className="overflow-hidden rounded-2xl">
                   <div
@@ -157,61 +155,62 @@ export default function PersonalLife() {
                     ))}
                   </div>
                 </div>
-
               </div>
 
               {/* Tabs */}
-              <div className="flex justify-center gap-8">
-                {hobbyCategories.map((cat, i) => (
-                  <button
-                    key={cat.id}
-                    onClick={() => handleTabClick(i)}
-                    className="flex flex-col items-center gap-1"
-                  >
-                    <span
-                      className={`text-sm font-medium transition-colors duration-200 ${
-                        activeCategory === i
-                          ? "text-orange-600"
-                          : "text-orange-400 hover:text-orange-500"
-                      }`}
+              <div className="flex justify-center">
+                <div className="flex gap-8 rounded-2xl border border-orange-200/80 bg-white px-6 py-3 shadow-lg backdrop-blur-sm">
+                  {hobbyCategories.map((cat, i) => (
+                    <button
+                      key={cat.id}
+                      onClick={() => handleTabClick(i)}
+                      className="flex flex-col items-center gap-1"
                     >
-                      {cat.label}
-                    </span>
-
-                    <span className="relative h-0.5 w-12 overflow-hidden rounded-full bg-orange-200">
                       <span
-                        className={`absolute left-0 top-0 h-full rounded-full bg-orange-500 ${
-                          activeCategory === i && !paused
-                            ? "animate-progress"
-                            : activeCategory === i
-                            ? "w-full"
-                            : "w-0"
+                        className={`text-sm font-medium transition-colors duration-200 drop-shadow-sm ${
+                          activeCategory === i
+                            ? "text-orange-600"
+                            : "text-orange-400 hover:text-orange-500"
                         }`}
-                        style={
-                          activeCategory === i && !paused
-                            ? {
-                                animationDuration: `${AUTO_INTERVAL}ms`,
-                              }
-                            : undefined
-                        }
-                      />
-                    </span>
-                  </button>
-                ))}
-              </div>
+                      >
+                        {cat.label}
+                      </span>
 
+                      <span className="relative h-0.5 w-12 overflow-hidden rounded-full bg-orange-200">
+                        <span
+                          className={`absolute left-0 top-0 h-full rounded-full bg-orange-500 ${
+                            activeCategory === i && !paused
+                              ? "animate-progress"
+                              : activeCategory === i
+                              ? "w-full"
+                              : "w-0"
+                          }`}
+                          style={
+                            activeCategory === i && !paused
+                              ? {
+                                  animationDuration: `${AUTO_INTERVAL}ms`,
+                                }
+                              : undefined
+                          }
+                        />
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </AnimateOnScroll>
 
           {/* BOTTOM — Bio */}
           <AnimateOnScroll delay={200}>
             <div className="rounded-2xl border border-orange-200/80 bg-white/30 p-5 shadow-sm backdrop-blur-sm">
-              <p className="whitespace-pre-line text-sm leading-relaxed text-black/80 md:text-[15px] font-semibold">
+              <p className="whitespace-pre-line text-sm leading-relaxed text-white drop-shadow-md md:text-[15px] font-semibold"
+              style={{ textShadow: "0 2px 4px rgba(0,0,0,0.3)" }}
+              >
                 {personalBio}
               </p>
             </div>
           </AnimateOnScroll>
-
         </div>
       </div>
 
@@ -233,7 +232,7 @@ export default function PersonalLife() {
             />
 
             <button
-              className="absolute -right-16 top-0 text-4xl text-white transition-colors hover:text-orange-300"
+              className="absolute -right-16 top-0 text-4xl text-white drop-shadow-lg transition-colors hover:text-orange-300"
               onClick={() => setSelectedImage(null)}
             >
               ×
