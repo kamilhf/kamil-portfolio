@@ -126,7 +126,7 @@ export default function About() {
                 I am a fourth-year Geodesy and Geomatics Engineering student at Institut Teknologi Bandung who is interested in hydrography, GIS, and spatial data analysis. I enjoy learning how geospatial technologies can be applied to real-world problems, especially in marine and environmental contexts.
               </p>
               <p className="mb-4 text-base leading-relaxed text-sky-800/80">
-                During my studies, I have been involved in several projects related to bathymetric mapping, LiDAR processing, satellite-derived bathymetry, and spatial analysis. Through these experiences, I became familiar with both field surveying activities and geospatial data processing workflows.
+                During my studies, I have been involved in several projects related to datum transformation, bathymetric mapping, LiDAR processing, satellite-derived bathymetry, GNSS surveying, and spatial analysis. Through these experiences, I became familiar with both field surveying activities and geospatial data processing workflows.
               </p>
               <p className="text-base leading-relaxed text-sky-800/80">
                 Outside academics, I also enjoy working in collaborative environments through organizational activities, mentoring, and creative projects. I like discussing ideas, learning from different perspectives, and working together with others to create meaningful outputs, both in technical and non-technical settings.
