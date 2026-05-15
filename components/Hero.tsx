@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const roles = [
   "Geodesy & Geomatics Engineer",
@@ -12,6 +12,12 @@ const roles = [
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0,
+  });
+
+  const heroRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,25 +30,88 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!heroRef.current) return;
+
+      const rect = heroRef.current.getBoundingClientRect();
+
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+    };
+
+    const hero = heroRef.current;
+
+    hero?.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      hero?.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   return (
     <section
+      ref={heroRef}
       id="hero"
-      className="hero-bg relative flex min-h-screen items-center justify-center overflow-hidden pt-20"
+      className="hero-bg relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-sky-50 via-white to-sky-100 pt-20"
     >
+      {/* Cinematic Aurora Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Mouse Spotlight */}
+        <div
+          className="pointer-events-none absolute z-[1] h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl transition-all duration-75"
+          style={{
+            left: mousePosition.x,
+            top: mousePosition.y,
+            background:
+              "radial-gradient(circle, rgba(56,189,248,0.10) 0%, rgba(14,165,233,0.05) 40%, transparent 75%)",
+          }}
+        />
+
+        {/* Blue Glow */}
+        <div
+          className="absolute left-[-10%] top-[-10%] h-[38rem] w-[38rem] rounded-full blur-3xl"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(14,165,233,0.35) 0%, rgba(56,189,248,0.18) 35%, transparent 72%)",
+            animation: "auroraFloat1 14s ease-in-out infinite",
+          }}
+        />
+
+        {/* Cyan Glow */}
+        <div
+          className="absolute bottom-[-15%] right-[-10%] h-[34rem] w-[34rem] rounded-full blur-3xl"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(125,211,252,0.32) 0%, rgba(14,165,233,0.14) 40%, transparent 72%)",
+            animation: "auroraFloat2 18s ease-in-out infinite",
+          }}
+        />
+
+        {/* Center Glow */}
+        <div
+          className="absolute left-1/2 top-1/2 h-[26rem] w-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
+          style={{
+            background: "radial-gradient(circle, rgba(56,189,248,0.22) 0%, transparent 70%)",
+            animation: "pulseSlow 8s ease-in-out infinite",
+          }}
+        />
+      </div>
+
+      {/* Grid Overlay */}
       <div
-        className="absolute right-[8%] top-24 h-72 w-72 rounded-full opacity-20"
+        className="absolute inset-0 opacity-[0.12]"
         style={{
-          background: "radial-gradient(circle, #38bdf8, transparent 70%)",
-          animation: "float 8s ease-in-out infinite",
+          backgroundImage:
+            "linear-gradient(to right, rgba(14,165,233,0.18) 1px, transparent 1px), linear-gradient(to bottom, rgba(14,165,233,0.18) 1px, transparent 1px)",
+          backgroundSize: "120px 120px",
         }}
       />
-      <div
-        className="absolute bottom-20 left-[5%] h-48 w-48 rounded-full opacity-15"
-        style={{
-          background: "radial-gradient(circle, #0ea5e9, transparent 70%)",
-          animation: "float 6s ease-in-out infinite 1s",
-        }}
-      />
+
+      {/* Soft Fade */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-white/40" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         {/* Big greeting */}
@@ -56,7 +125,12 @@ export default function Hero() {
           }}
         >
           {"Hi, I'm "}
-          <span className="inline-block bg-gradient-to-r from-sky-600 to-sky-300 bg-clip-text text-transparent">
+          <span
+            className="animated-gradient-text inline-block bg-gradient-to-r from-sky-700 via-cyan-400 to-sky-300 bg-[length:200%_200%] bg-clip-text text-transparent"
+            style={{
+              textShadow: "0 0 30px rgba(56,189,248,0.25)",
+            }}
+          >
             Kamil
           </span>
         </h1>
@@ -127,7 +201,10 @@ export default function Hero() {
 
       {/* Scroll Indicator - PERBAIKAN */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <div className="flex flex-col items-center gap-1 opacity-50" style={{ animation: "float 3s ease-in-out infinite" }}>
+        <div
+          className="flex flex-col items-center gap-1 opacity-50"
+          style={{ animation: "float 3s ease-in-out infinite" }}
+        >
           <span className="text-xs uppercase tracking-widest text-sky-500">Scroll</span>
           <svg
             className="h-4 w-4 text-sky-500"

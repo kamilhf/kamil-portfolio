@@ -152,7 +152,7 @@ export default function WorkExperience() {
                   </div>
 
                   <div className="flex flex-shrink-0 flex-col gap-1 sm:items-end">
-                    <span className="whitespace-nowrap rounded-full bg-sky-100 px-3 py-1 text-xs font-medium text-sky-600 self-start sm:self-auto">
+                    <span className="self-start whitespace-nowrap rounded-full bg-sky-100 px-3 py-1 text-xs font-medium text-sky-600 sm:self-auto">
                       {exp.period}
                     </span>
                     <span className="text-xs text-sky-400">{exp.location}</span>

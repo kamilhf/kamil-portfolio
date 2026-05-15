@@ -24,22 +24,23 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-30 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-30 transform-gpu transition-all duration-300 will-change-transform [backface-visibility:hidden] ${
         scrolled
-          ? "bg-white/80 py-3 shadow-sm shadow-sky-100 backdrop-blur-md"
+          ? "border-b border-white/40 bg-white/95 py-3 shadow-md shadow-sky-100/50"
           : "bg-transparent py-5"
       }`}
     >
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/40 to-white/10 opacity-70" />
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6">
         {/* Logo / Home */}
         <a
           href="#hero"
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-100 text-sky-600 shadow-sm transition-colors duration-200 hover:bg-sky-200"
+          className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/60 text-sky-600 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white"
           aria-label="Home"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -54,8 +55,14 @@ export default function Navbar() {
         <ul className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <li key={item.href}>
-              <a href={item.href} className="nav-link">
+              <a
+                href={item.href}
+                className="group relative px-1 py-1 text-sm font-medium text-sky-700 transition-colors duration-300 hover:text-sky-500"
+              >
                 {item.label}
+
+                {/* Animated underline */}
+                <span className="absolute bottom-0 left-0 h-[2px] w-0 rounded-full bg-gradient-to-r from-sky-400 to-cyan-300 transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
           ))}

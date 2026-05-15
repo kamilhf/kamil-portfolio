@@ -22,7 +22,7 @@ export default function Home() {
         {/* Shared background wrapper */}
         <div
           id="personal"
-          className="relative overflow-hidden border-t-4 border-orange-300 scroll-mt-[70px]"
+          className="relative scroll-mt-[70px] overflow-hidden border-t-4 border-orange-300"
         >
           {/* Background image */}
           <div
@@ -41,7 +41,6 @@ export default function Home() {
             <Footer />
           </div>
         </div>
-
       </main>
     </>
   );

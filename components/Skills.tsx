@@ -171,24 +171,37 @@ export default function Skills() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((group, gi) => (
             <AnimateOnScroll key={group.category} delay={gi * 80}>
-              <div className={`rounded-2xl border p-5 ${group.color} h-full`}>
-                <p
-                  className={`mb-4 text-xs font-semibold uppercase tracking-wider ${group.accent}`}
-                >
-                  {group.category}
-                </p>
+              <div
+                className={`group relative overflow-hidden rounded-2xl border p-5 ${group.color} h-full transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-sky-200/40`}
+              >
+                {/* Animated Glow */}
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <div className="absolute -left-10 top-0 h-32 w-32 rounded-full bg-sky-300/20 blur-3xl" />
+                  <div className="absolute bottom-0 right-0 h-32 w-32 rounded-full bg-cyan-300/20 blur-3xl" />
+                </div>
 
-                <div className="flex flex-col gap-3">
-                  {group.skills.map((skill) => (
-                    <div
-                      key={skill.name}
-                      className="flex items-center gap-3 rounded-xl bg-white/70 px-3 py-2.5 shadow-sm transition-colors duration-150 hover:bg-white"
-                    >
-                      <SkillIcon skill={skill} />
+                {/* CONTENT */}
+                <div className="relative z-10">
+                  <p
+                    className={`mb-4 text-xs font-semibold uppercase tracking-wider ${group.accent}`}
+                  >
+                    {group.category}
+                  </p>
 
-                      <span className="text-sm font-medium text-sky-900">{skill.name}</span>
-                    </div>
-                  ))}
+                  <div className="flex flex-col gap-3">
+                    {group.skills.map((skill) => (
+                      <div
+                        key={skill.name}
+                        className="group/item flex items-center gap-3 rounded-xl bg-white/70 px-3 py-2.5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-md"
+                      >
+                        <div className="transition-transform duration-300 group-hover/item:rotate-3 group-hover/item:scale-110">
+                          <SkillIcon skill={skill} />
+                        </div>
+
+                        <span className="text-sm font-medium text-sky-900">{skill.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </AnimateOnScroll>

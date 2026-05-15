@@ -45,7 +45,8 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
         },
-        progress: { // <-- KEYFRAMES PROGRESS
+        progress: {
+          // <-- KEYFRAMES PROGRESS
           "0%": { width: "0%" },
           "100%": { width: "100%" },
         },

@@ -151,7 +151,7 @@ export default function OrganizationalExperience() {
                     <p className="mt-0.5 text-sm font-medium text-sky-500">{o.role}</p>
                   </div>
 
-                  <span className="h-fit flex-shrink-0 whitespace-nowrap rounded-full bg-sky-100 px-3 py-1 text-xs font-medium text-sky-600 self-start sm:self-auto">
+                  <span className="h-fit flex-shrink-0 self-start whitespace-nowrap rounded-full bg-sky-100 px-3 py-1 text-xs font-medium text-sky-600 sm:self-auto">
                     {o.period}
                   </span>
                 </div>
