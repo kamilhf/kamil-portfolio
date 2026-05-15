@@ -55,7 +55,12 @@ const orgs = [
       {
         src: "/images/org/diskasi2.jpg",
         label: "Diskasi Documentation 2",
-        aspect: "aspect-video",
+        aspect: "aspect-[3/4]",
+      },
+      {
+        src: "/images/org/diskasi3.jpg",
+        label: "Diskasi Documentation 3",
+        aspect: "aspect-[3/4]",
       },
     ],
   },
@@ -75,12 +80,12 @@ const orgs = [
         aspect: "aspect-[4/3]",
       },
       {
-        src: "/images/org/wisok4.jpg",
+        src: "/images/org/wisok1.jpg",
         label: "Wisokto Documentation 2",
         aspect: "aspect-[3/4]",
       },
       {
-        src: "/images/org/wisok5.jpg",
+        src: "/images/org/wisok3.jpg",
         label: "Wisokto Documentation 3",
         aspect: "aspect-[3/4]",
       },
@@ -199,14 +204,46 @@ export default function OrganizationalExperience() {
                 <p className="mb-6 text-sm leading-relaxed text-sky-800/75">{o.description}</p>
 
                 {/* Photos */}
-                {o.id === "entertainment" ? (
+                {o.id === "disklit" ? (
+                  // Custom layout: 3 foto dalam 1 baris, tinggi sama — foto pertama lebih lebar (16/9), dua kanan portrait (3/4)
+                  <div
+                    className="grid gap-2.5"
+                    style={{
+                      gridTemplateColumns: "2fr 1fr 1fr",
+                      height: "240px",
+                    }}
+                  >
+                    {o.photos.map((photo, pi) => (
+                      <div
+                        key={pi}
+                        className="relative cursor-pointer overflow-hidden rounded-xl"
+                        onClick={() => setSelectedImage(photo.src)}
+                      >
+                        <Image
+                          src={photo.src}
+                          alt={`${o.org} photo ${pi + 1}`}
+                          fill
+                          className="object-cover transition-transform duration-500 hover:scale-105"
+                        />
+                        <div
+                          className="absolute bottom-0 left-0 right-0 p-2 text-center opacity-0 transition-opacity duration-300 hover:opacity-100"
+                          style={{
+                            background: "linear-gradient(transparent, rgba(7, 89, 133, 0.9))",
+                          }}
+                        >
+                          <span className="text-xs font-medium text-white">{photo.label}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : o.id === "entertainment" ? (
                   // Custom layout: foto besar di kiri (span 2 baris), dua foto kecil di kanan
                   <div
                     className="grid gap-2.5"
                     style={{
                       gridTemplateColumns: "2fr 1fr",
                       gridTemplateRows: "1fr 1fr",
-                      height: "400px",
+                      height: "320px",
                     }}
                   >
                     {/* Foto pertama: mengisi penuh kolom kiri (2 baris) */}
