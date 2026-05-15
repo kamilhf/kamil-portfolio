@@ -77,6 +77,11 @@ const orgs = [
       {
         src: "/images/org/wisok2.jpg",
         label: "Wisokto Documentation 2",
+        aspect: "aspect-[4/3]",
+      },
+      {
+        src: "/images/org/wisok3.jpg",
+        label: "Wisokto Documentation 3",
         aspect: "aspect-[3/4]",
       },
     ],
@@ -100,6 +105,28 @@ const orgs = [
         src: "/images/org/akprof2.jpg",
         label: "Prof. Academy Documentation 2",
         aspect: "aspect-video",
+      },
+    ],
+  },
+
+  {
+    id: "apres",
+    org: "Apres! ITB",
+    role: "Vice Head of Musical Arts Division",
+    period: "June 2024 – June 2025",
+    tags: ["Music", "Leadership", "Collaborate", "Curation"],
+    description:
+      "Served as a coordinator and supervisor for 10 members within Apres! ITB, managing music production activities including recording, mixing, and mastering songs created by members. Also led collaborative projects involving music album studies and analyses, as well as playlist curation tailored to selected thematic concepts, while fostering teamwork and creative development among members.",
+    photos: [
+      {
+        src: "/images/org/apres1.jpg",
+        label: "Apres! Documentation 1",
+        aspect: "aspect-[4/3]",
+      },
+      {
+        src: "/images/org/apres2.jpg",
+        label: "Apres! Documentation 2",
+        aspect: "aspect-[4/3]",
       },
     ],
   },
