@@ -219,10 +219,10 @@ export default function Skills() {
               {certifications.map((cert) => (
                 <div
                   key={cert.title}
-                  className="flex items-start gap-4 rounded-xl bg-sky-50/80 p-3 transition-colors hover:bg-sky-100/80"
+                  className="group flex items-start gap-4 rounded-xl border border-sky-100 bg-sky-50/70 p-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-200 hover:bg-sky-100/70 hover:shadow-md"
                 >
                   {/* Certification icon */}
-                  <div className="relative h-12 w-12 flex-shrink-0">
+                  <div className="relative h-12 w-12 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
                     <Image
                       src={cert.icon}
                       alt={cert.title}
@@ -244,6 +244,55 @@ export default function Skills() {
             </div>
           </div>
         </AnimateOnScroll>
+
+        {/* Languages */}
+<AnimateOnScroll delay={260}>
+  <div className="glass-card mt-6 p-6">
+
+    <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-sky-500">
+      Languages
+    </p>
+
+    <div className="grid gap-3 md:grid-cols-2">
+
+      {/* Bahasa Indonesia */}
+      <div className="group rounded-2xl border border-sky-100 bg-sky-50/70 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-200 hover:bg-sky-100/70 hover:shadow-md">
+
+        <div className="mb-2 flex items-center gap-2">
+          <span className="text-lg">🇮🇩</span>
+
+          <h3 className="font-semibold text-sky-800">
+            Bahasa Indonesia
+          </h3>
+        </div>
+
+        <p className="text-sm text-sky-600">
+          Native Proficiency
+        </p>
+
+      </div>
+
+      {/* English */}
+      <div className="group rounded-2xl border border-sky-100 bg-sky-50/70 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-200 hover:bg-sky-100/70 hover:shadow-md">
+
+        <div className="mb-2 flex items-center gap-2">
+          <span className="text-lg">🇬🇧</span>
+
+          <h3 className="font-semibold text-sky-800">
+            English
+          </h3>
+        </div>
+
+        <p className="text-sm text-sky-600">
+          EF SET 84/100 — C2 Proficient
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</AnimateOnScroll>
       </div>
     </section>
   );

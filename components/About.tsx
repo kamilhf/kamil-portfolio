@@ -67,10 +67,10 @@ export default function About() {
                     href={c.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 rounded-xl border border-sky-100 bg-sky-50 px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-100"
+                    className="group flex items-center gap-3 rounded-xl border border-sky-100 bg-white px-4 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-200 hover:bg-sky-100/70 hover:shadow-md"
                   >
                     <span
-                      className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg text-white shadow-sm"
+                      className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg text-white shadow-sm transition-transform duration-300 group-hover:scale-105"
                       style={{ backgroundColor: c.color }}
                     >
                       {c.icon}
@@ -120,15 +120,15 @@ export default function About() {
           </AnimateOnScroll>
 
           {/* Right: Bio text only */}
-          <AnimateOnScroll delay={200} className="md:col-span-2">
-            <div className="flex flex-col gap-6">
-              <p className="mb-4 text-lg leading-relaxed text-sky-800/80">
+          <AnimateOnScroll delay={200} className="md:col-span-2 md:-mt-1">
+            <div className="glass-card flex flex-col gap-6 px-6 py-5 md:px-8 md:py-6">
+              <p className="mb-4 text-base leading-relaxed text-sky-800/80">
                 I am a fourth-year Geodesy and Geomatics Engineering student at Institut Teknologi Bandung who is interested in hydrography, GIS, and spatial data analysis. I enjoy learning how geospatial technologies can be applied to real-world problems, especially in marine and environmental contexts.
               </p>
-              <p className="mb-4 text-lg leading-relaxed text-sky-800/80">
+              <p className="mb-4 text-base leading-relaxed text-sky-800/80">
                 During my studies, I have been involved in several projects related to bathymetric mapping, LiDAR processing, satellite-derived bathymetry, and spatial analysis. Through these experiences, I became familiar with both field surveying activities and geospatial data processing workflows.
               </p>
-              <p className="text-lg leading-relaxed text-sky-800/80">
+              <p className="text-base leading-relaxed text-sky-800/80">
                 Outside academics, I also enjoy working in collaborative environments through organizational activities, mentoring, and creative projects. I like discussing ideas, learning from different perspectives, and working together with others to create meaningful outputs, both in technical and non-technical settings.
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function About() {
 
         {/* Bottom: Education card — full width */}
         <AnimateOnScroll delay={300}>
-          <div className="glass-card mt-6 p-5">
+          <div className="glass-card group mt-6 p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-sky-200/40">
             {/* Mobile: vertikal — Desktop: horizontal */}
             <div className="flex flex-col gap-4 md:flex-row md:items-center">
               {/* Ikon + info */}
@@ -182,7 +182,7 @@ export default function About() {
                     {row.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-sky-100 px-2 py-0.5 text-xs font-medium text-sky-600"
+                        className="rounded-full bg-sky-100 px-2 py-0.5 text-xs font-medium text-sky-600 transition-all duration-300 hover:-translate-y-0.5 hover:bg-sky-200"
                       >
                         {tag}
                       </span>

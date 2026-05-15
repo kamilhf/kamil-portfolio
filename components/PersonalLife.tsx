@@ -40,7 +40,7 @@ const hobbyCategories = [
   },
 ];
 
-const AUTO_INTERVAL = 4000;
+const AUTO_INTERVAL = 8000;
 
 export default function PersonalLife() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -71,7 +71,7 @@ export default function PersonalLife() {
 
     setTimeout(() => {
       setPaused(false);
-    }, 8000);
+    }, 4000);
   };
 
   // Pause autoplay when using arrows
@@ -86,7 +86,7 @@ export default function PersonalLife() {
 
     setTimeout(() => {
       setPaused(false);
-    }, 8000);
+    }, 4000);
   };
 
   // Disable body scroll on modal open
@@ -155,7 +155,7 @@ export default function PersonalLife() {
                 </button>
 
                 {/* Actual slider container */}
-                <div className="overflow-hidden rounded-3xl border border-orange-200/80 bg-white/30 p-3 shadow-sm backdrop-blur-sm">
+                <div className="overflow-hidden rounded-3xl border border-orange-200/80 bg-white/30 p-3 shadow-sm backdrop-blur">
                   {/* INNER MASK */}
                   <div className="overflow-hidden rounded-2xl">
                     <div
@@ -191,7 +191,7 @@ export default function PersonalLife() {
 
               {/* Tabs */}
               <div className="flex justify-center">
-                <div className="flex gap-8 rounded-2xl border border-orange-200/80 bg-orange-50/90 px-6 py-3 shadow-lg backdrop-blur-sm">
+                <div className="flex gap-8 rounded-2xl border border-orange-200/80 bg-orange-50/90 px-6 py-3 shadow-lg backdrop-blur">
                   {hobbyCategories.map((cat, i) => (
                     <button
                       key={cat.id}
@@ -235,7 +235,7 @@ export default function PersonalLife() {
 
           {/* BOTTOM — Bio */}
           <AnimateOnScroll delay={200}>
-            <div className="rounded-2xl border border-orange-200/80 bg-white/30 p-5 shadow-sm backdrop-blur-sm">
+            <div className="rounded-2xl border border-orange-200/80 bg-white/30 p-5 shadow-sm backdrop-blur">
               <p
                 className="whitespace-pre-line text-sm font-semibold leading-relaxed text-white drop-shadow-md md:text-[15px]"
                 style={{ textShadow: "0 2px 4px rgba(0,0,0,0.3)" }}
