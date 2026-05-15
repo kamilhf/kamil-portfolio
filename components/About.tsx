@@ -102,7 +102,7 @@ export default function About() {
 
               {/* Download CV */}
               <a
-                href="/cv/CV_Kamil Hayyunaji Fabriano.pdf"
+                href="/cv/CV - Kamil Hayyunaji Fabriano.pdf"
                 download
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-sky-500 px-6 py-3 text-sm font-medium text-white shadow-md shadow-sky-200 transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-600 hover:shadow-sky-300"
               >
