@@ -45,9 +45,10 @@ export default function About() {
           <h2 className="section-title mb-8">About Me</h2>
         </AnimateOnScroll>
 
-        <div className="grid items-start gap-12 md:grid-cols-2">
-          {/* Left: Photo + contacts */}
-          <AnimateOnScroll delay={100}>
+        {/* Top: foto+kontak (kiri) & bio (kanan) */}
+        <div className="grid items-start gap-8 md:grid-cols-3">
+          {/* Left: Photo + contacts + download CV */}
+          <AnimateOnScroll delay={100} className="md:col-span-1">
             <div className="flex flex-col items-center gap-6">
               <div className="relative h-56 w-56 overflow-hidden rounded-2xl shadow-xl shadow-sky-200/60 ring-4 ring-sky-200">
                 <Image
@@ -118,86 +119,80 @@ export default function About() {
             </div>
           </AnimateOnScroll>
 
-          {/* Right: Bio text + education */}
-          <AnimateOnScroll delay={200}>
+          {/* Right: Bio text only */}
+          <AnimateOnScroll delay={200} className="md:col-span-2">
             <div className="flex flex-col gap-6">
-              <div>
-                <p className="mb-4 text-base leading-relaxed text-sky-800/80">
-                  I am a fourth-year Geodesy and Geomatics Engineering student at{" "}
-                  <strong className="text-sky-700">Institut Teknologi Bandung</strong>, with a GPA
-                  of 3.36/4.00 and a place on the Dean&apos;s List for Semesters 3 and 6. My
-                  academic journey has shaped me into a practitioner who bridges rigorous geodetic
-                  theory with real-world spatial problems.
-                </p>
-                <p className="mb-4 text-base leading-relaxed text-sky-800/80">
-                  My technical interests lie at the intersection of{" "}
-                  <strong className="text-sky-700">hydrographic surveying</strong>,{" "}
-                  <strong className="text-sky-700">GIS & remote sensing</strong>, and{" "}
-                  <strong className="text-sky-700">geodetic datum transformation</strong>. I have
-                  carried these interests through internships at BIG (Badan Informasi Geospasial)
-                  and Pertamina Hulu Rokan, where I worked on bathymetric modelling, LiDAR
-                  processing, and web-based datum transformation systems.
-                </p>
-                <p className="text-base leading-relaxed text-sky-800/80">
-                  Beyond the technical, I value collaboration and mentorship — serving as an
-                  Academic Tutor for Hydrography and a Practicum Assistant for AI & Data Literacy at
-                  ITB, helping peers navigate complex spatial and computational concepts.
-                </p>
-              </div>
-
-              {/* Education card */}
-              <div className="glass-card p-5">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-sky-500">
-                    <svg
-                      className="h-5 w-5 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 14l9-5-9-5-9 5 9 5z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-sky-800">Institut Teknologi Bandung</h3>
-                    <p className="text-sm text-sky-600">B.Sc. Geodesy & Geomatics Engineering</p>
-                    <p className="mt-1 text-xs text-sky-500">
-                      2022 – Present &nbsp;·&nbsp; GPA 3.36/4.00
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-1.5">
-                      {[
-                        "Hydrography",
-                        "GIS",
-                        "Photogrammetry",
-                        "GNSS",
-                        "Remote Sensing",
-                        "Metocean",
-                      ].map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full bg-sky-100 px-2 py-0.5 text-xs font-medium text-sky-600"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <p className="mb-4 text-lg leading-relaxed text-sky-800/80">
+                I am a fourth-year Geodesy and Geomatics Engineering student at Institut Teknologi Bandung who is interested in hydrography, GIS, and spatial data analysis. I enjoy learning how geospatial technologies can be applied to real-world problems, especially in marine and environmental contexts.
+              </p>
+              <p className="mb-4 text-lg leading-relaxed text-sky-800/80">
+                During my studies, I have been involved in several projects related to bathymetric mapping, LiDAR processing, satellite-derived bathymetry, and spatial analysis. Through these experiences, I became familiar with both field surveying activities and geospatial data processing workflows.
+              </p>
+              <p className="text-lg leading-relaxed text-sky-800/80">
+                Outside academics, I also enjoy working in collaborative environments through organizational activities, mentoring, and creative projects. I like discussing ideas, learning from different perspectives, and working together with others to create meaningful outputs, both in technical and non-technical settings.
+              </p>
             </div>
           </AnimateOnScroll>
         </div>
+
+        {/* Bottom: Education card — full width */}
+        <AnimateOnScroll delay={300}>
+          <div className="glass-card mt-6 p-5">
+            {/* Mobile: vertikal — Desktop: horizontal */}
+            <div className="flex flex-col gap-4 md:flex-row md:items-center">
+              {/* Ikon + info */}
+              <div className="flex items-center gap-4">
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-sky-500">
+                  <svg
+                    className="h-5 w-5 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 14l9-5-9-5-9 5 9 5z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-sky-800">Institut Teknologi Bandung</h3>
+                  <p className="text-sm text-sky-600">B.Sc. Geodesy & Geomatics Engineering</p>
+                  <p className="mt-1 text-xs text-sky-500">
+                    2022 – Present &nbsp;·&nbsp; GPA 3.36/4.00
+                  </p>
+                </div>
+              </div>
+
+              {/* Tags — kiri di mobile, kanan di desktop */}
+              <div className="flex flex-wrap gap-1.5 md:ml-auto md:flex-col md:items-end">
+                {[
+                  ["Hydrography", "GIS", "Photogrammetry", "GNSS Survey"],
+                  ["Remote Sensing", "Spatial Database", "Metocean"],
+                ].map((row, ri) => (
+                  <div key={ri} className="flex flex-wrap gap-1.5">
+                    {row.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-sky-100 px-2 py-0.5 text-xs font-medium text-sky-600"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

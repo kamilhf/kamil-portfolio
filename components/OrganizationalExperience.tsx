@@ -12,7 +12,7 @@ const orgs = [
     period: "June 2025 – December 2025",
     tags: ["Mentoring", "Hydrography", "Teaching"],
     description:
-      "Mentored junior students on a weekly basis through the Hydrography Expertise Group, facilitating in-depth discussion sessions covering course materials, problem sets, and practical surveying concepts. Played an active role in helping students build a strong foundation in hydroacoustic data collection and processing.",
+      "I mentored junior students through weekly discussion sessions covering hydrography course materials, problem-solving exercises, and practical surveying concepts. This role involved guiding students in understanding technical topics, encouraging collaborative learning, and supporting their academic development in hydrographic and geospatial studies.",
     photos: [],
   },
 
@@ -21,9 +21,9 @@ const orgs = [
     org: "IMG-ITB — Student Representative Council (DPM)",
     role: "Member",
     period: "May 2025 – January 2026",
-    tags: ["Governance", "Student Advocacy", "Research"],
+    tags: ["Governance", "Student Advocacy", "Collaborative"],
     description:
-      "Developed and managed student aspiration platforms through bi-weekly surveys, structured interviews, and open discussion forums to systematically gather and analyze organizational evaluations. Produced monthly processed aspiration reports delivered to DPM IMG-ITB and executive boards for organizational improvement initiatives.",
+      "Contributed to the development and management of student aspiration platforms through regular surveys, interviews, and discussion forums. I was responsible for gathering, analyzing, and processing organizational evaluations submitted by students, which were then compiled into monthly reports for the council and executive boards to support evaluation and organizational improvement initiatives.",
     photos: [
       {
         src: "/images/org/dpm1.jpg",
@@ -43,9 +43,9 @@ const orgs = [
     org: "IMG-ITB — Discussion, Research & Literacy Dept.",
     role: "Staff",
     period: "July 2024 – April 2025",
-    tags: ["Research", "Spatial Hazard", "Environmental Assessment"],
+    tags: ["Research", "Spatial Hazard", "Environmental Assessment", "Coastal Policies"],
     description:
-      "Contributed to two spatial research studies: vulnerability analysis and tsunami mitigation for the Tasikmalaya Regency coast, and a spatial assessment of tidal flood risk in Jakarta using environmental parameters.",
+      "Contributed to several spatial hazard, environmental assessment, and coastal policy studies focusing on marine and coastal issues. My work included projects titled “Marine Spatial Contestation in Coastal Areas: Policy Analysis and Social Reactions toward the Privatization of Sea Access” and “Spatial Assessment of Tidal Flood Risk in Jakarta Using Environmental Parameters.” Through these studies, I was involved in spatial analysis, environmental risk assessment, and the evaluation of socio-spatial dynamics affecting coastal communities and marine environments.",
     photos: [
       {
         src: "/images/org/diskasi1.jpg",
@@ -70,9 +70,9 @@ const orgs = [
     org: "IMG-ITB — Wisuda Oktober 2024",
     role: "Head of Entertainment Division",
     period: "June 2024 – January 2025",
-    tags: ["Leadership", "Event Planning", "Creative Direction"],
+    tags: ["Leadership", "Event Planning", "Creative Direction", "Teamwork"],
     description:
-      "Directed a team of 11 staff in conceptualizing and delivering the entertainment program for IMG-ITB's October 2024 graduation celebration.",
+      "I led a team of 11 staff members in designing and executing entertainment programs for the event. I coordinated interactive activities aimed at strengthening connections between students and graduates, while also overseeing the production of graduation appreciation media such as commemorative magazines and social media-based graduate spotlight campaigns. Through this role, I developed leadership, event management, and creative coordination skills in managing large-scale student events.",
     photos: [
       {
         src: "/images/org/wisok1.jpg",
@@ -99,7 +99,7 @@ const orgs = [
     period: "October 2023 – April 2024",
     tags: ["Training", "ETS", "Photogrammetry", "TLS"],
     description:
-      "Facilitated hands-on practical training sessions for IMG-ITB members on surveying techniques using ETS, photogrammetry, and TLS.",
+      "Helped facilitate practical training sessions focused on surveying techniques using Electronic Total Station (ETS), photogrammetry, and Terrestrial Laser Scanning (TLS). My responsibilities included assisting participants throughout the complete workflow, from field preparation and data acquisition to data processing and interpretation, helping members strengthen both technical and practical surveying competencies.",
     photos: [
       {
         src: "/images/org/akprof1.jpg",
@@ -119,7 +119,7 @@ const orgs = [
     org: "Apres! ITB",
     role: "Vice Head of Musical Arts Division",
     period: "June 2024 – June 2025",
-    tags: ["Music", "Leadership", "Collaborate", "Curation"],
+    tags: ["Leadership", "Collaborative", "Curation", "Music"],
     description:
       "Served as a coordinator and supervisor for 10 members within Apres! ITB, managing music production activities including recording, mixing, and mastering songs created by members. Also led collaborative projects involving music album studies and analyses, as well as playlist curation tailored to selected thematic concepts, while fostering teamwork and creative development among members.",
     photos: [
@@ -243,7 +243,7 @@ export default function OrganizationalExperience() {
                     style={{
                       gridTemplateColumns: "2fr 1fr",
                       gridTemplateRows: "1fr 1fr",
-                      height: "320px",
+                      height: "400px",
                     }}
                   >
                     {/* Foto pertama: mengisi penuh kolom kiri (2 baris) */}

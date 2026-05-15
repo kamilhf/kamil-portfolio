@@ -12,7 +12,7 @@ const experiences = [
     role: "Capstone Project — Datum Transformation Information System",
     period: "February 2026 – Present",
     location: "Riau, Indonesia",
-    tags: ["Geodesy", "Web Development", "Datum Transformation", "MATLAB"],
+    tags: ["Geodesy", "Web Development", "Datum Transformation"],
     description:
       "Developed a web-based information system to automate datum transformation processes within Pertamina Hulu Rokan's operational area. The system integrates geodetic control network shift data and tectonic plate deformation models to enable accurate coordinate conversion between reference frames (ID74 to SRGI2013), supporting reliable spatial data management for oil and gas exploration and production activities.",
     photos: [
@@ -40,7 +40,7 @@ const experiences = [
     role: "Practicum Assistant — AI & Data Literacy Course",
     period: "April 2026 – Present",
     location: "Bandung, Indonesia",
-    tags: ["Teaching", "Python", "Machine Learning", "Data Literacy"],
+    tags: ["Teaching", "Artificial Intelligence", "Machine Learning", "Data Literacy"],
     description:
       "Facilitated bi-weekly practicum sessions for 63 students, guiding them through modules covering descriptive statistics, scientific computing with NumPy and Matplotlib, spatial data visualization, and machine learning applications in earth sciences. Responsible for session preparation, live coding demonstrations, and student evaluation.",
     photos: [],
@@ -49,10 +49,10 @@ const experiences = [
   {
     id: "big",
     company: "Badan Informasi Geospasial (BIG)",
-    role: "Intern — Hydrographic Survey & Satellite-Derived Bathymetry",
+    role: "Intern",
     period: "August 2025 – September 2025",
     location: "Cibinong, Indonesia",
-    tags: ["Hydrography", "SDB", "Machine Learning", "Sentinel-2"],
+    tags: ["Hydrography", "SDB", "Machine Learning", "Remote Sensing"],
     description:
       "Integrated bathymetric data from primary hydroacoustic surveys (SBES, USV) with Satellite-Derived Bathymetry from Sentinel-2B imagery to produce a 74.5 km² Digital Bathymetric Model for the shallow waters of Laut Island, South Kalimantan. Evaluated multiple ML models (Random Forest, KNN) for SDB prediction, with the best model achieving RMSE of 0.38 m against in-situ echosounder data.",
     photos: [
@@ -77,10 +77,10 @@ const experiences = [
   {
     id: "tortuga",
     company: "PT Tortuga Xcel Dynamics",
-    role: "Intern — LiDAR Processing & Terrestrial Survey QC",
+    role: "Intern",
     period: "January 2025 – February 2025",
     location: "Indonesia",
-    tags: ["LiDAR", "DTM", "DSM", "Quality Control"],
+    tags: ["LiDAR", "Photogrammetry", "Quality Control"],
     description:
       "Processed LiDAR point cloud data for solar farm site planning in Batang and Pemalang Regency, generating DTM, DSM, and contour maps. Also conducted quality control on terrestrial survey data for the Pertamina Feed Pipeline RU III Plaju–Kertapati corridor, verifying measurement accuracy and compliance with project specifications.",
     photos: [
