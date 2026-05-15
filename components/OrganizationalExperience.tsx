@@ -75,12 +75,12 @@ const orgs = [
       "Directed a team of 11 staff in conceptualizing and delivering the entertainment program for IMG-ITB's October 2024 graduation celebration.",
     photos: [
       {
-        src: "/images/org/wisok2.jpg",
+        src: "/images/org/wisok1.jpg",
         label: "Wisokto Documentation 1",
         aspect: "aspect-[4/3]",
       },
       {
-        src: "/images/org/wisok1.jpg",
+        src: "/images/org/wisok2.jpg",
         label: "Wisokto Documentation 2",
         aspect: "aspect-[3/4]",
       },
